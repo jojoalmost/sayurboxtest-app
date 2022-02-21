@@ -2,7 +2,8 @@ import styled from "styled-components";
 import React from "react";
 import {Link} from "react-router-dom";
 
-const Header: React.FC = () => (
+const Header: React.FC = () => {
+    return(
     <Container>
         <Wrapper>
             <img id="logo"
@@ -17,8 +18,8 @@ const Header: React.FC = () => (
                 <Menu to="/vehicles">Vehicles</Menu>
             </Menus>
         </Wrapper>
-    </Container>
-);
+    </Container>)
+};
 
 const Wrapper = styled('div')`
   flex: 1;
@@ -51,9 +52,9 @@ const Menus = styled('div')`
   gap: 2em;
 `
 
-const Menu = styled(Link)`
+const Menu = styled(Link)<{isActive?: boolean}>`
   text-decoration: none;
-  color: black;
+  color: ${props => props.isActive ? 'blue': 'red'};
 `
 
 export default Header;

@@ -5,7 +5,7 @@ query GetPeople{
   allPeople {
     people {
       name
-      hairColor
+      gender
     }
   }
 }`

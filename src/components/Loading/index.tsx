@@ -5,6 +5,7 @@ import {ReactComponent as LoadingImage} from '../../assets/svg/loading.svg'
 const Container = styled('div')`
   height: 100vh;
   display: flex;
+  background-color: transparent;
 `
 
 const Loading: React.FC = () => (
