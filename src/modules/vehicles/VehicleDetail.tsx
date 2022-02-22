@@ -22,6 +22,46 @@ const VehicleDetail: React.FC = () => {
                             <td className="title">name</td>
                             <td className="description">{data?.vehicle?.name}</td>
                         </tr>
+                        <tr>
+                            <td className="title">model</td>
+                            <td className="description">{data?.vehicle?.model}</td>
+                        </tr>
+                        <tr>
+                            <td className="title">vehicle Class</td>
+                            <td className="description">{data?.vehicle?.vehicleClass}</td>
+                        </tr>
+                        <tr>
+                            <td className="title">manufacturers</td>
+                            <td className="description">{data?.vehicle?.manufacturers}</td>
+                        </tr>
+                        <tr>
+                            <td className="title">cost In Credits</td>
+                            <td className="description">{data?.vehicle?.costInCredits}</td>
+                        </tr>
+                        <tr>
+                            <td className="title">length</td>
+                            <td className="description">{data?.vehicle?.length}</td>
+                        </tr>
+                        <tr>
+                            <td className="title">crew</td>
+                            <td className="description">{data?.vehicle?.crew}</td>
+                        </tr>
+                        <tr>
+                            <td className="title">passengers</td>
+                            <td className="description">{data?.vehicle?.passengers}</td>
+                        </tr>
+                        <tr>
+                            <td className="title">max Atmosphering Speed</td>
+                            <td className="description">{data?.vehicle?.maxAtmospheringSpeed}</td>
+                        </tr>
+                        <tr>
+                            <td className="title">cargo Capacity</td>
+                            <td className="description">{data?.vehicle?.cargoCapacity}</td>
+                        </tr>
+                        <tr>
+                            <td className="title">consumables</td>
+                            <td className="description">{data?.vehicle?.consumables}</td>
+                        </tr>
                         </tbody>
                     </Table.TableDetail>
                 </Card.BoxCard>
