@@ -7,7 +7,7 @@ const Menu: React.FC<LinkProps> = ({children, to, ...props}) => {
     const match = Boolean(useMatch({path: `${resolved.pathname}/*`, end: true}));
     return (
         <LinkMenu
-            isActive={match}
+            active={match}
             to={to}
             {...props}
         >
@@ -17,13 +17,13 @@ const Menu: React.FC<LinkProps> = ({children, to, ...props}) => {
 }
 
 interface LinkMenu {
-    isActive: boolean
+    active: boolean
 }
 
 const LinkMenu = styled(Link)<LinkMenu>`
   text-decoration: none;
-  font-weight: ${props => props.isActive ? 700 : 500};
-  color: ${props => props.isActive ? '#47b04b' : '#000000'};
+  font-weight: ${props => props.active ? 700 : 500};
+  color: ${props => props.active ? '#47b04b' : '#000000'};
 `
 
 export default Menu;
