@@ -18,13 +18,13 @@ const Pages: React.FC = () => (
                 <Route path="people" element={<People/>}/>
                 <Route path="people/:id" element={<People/>}/>
                 <Route path="planets" element={<Planets/>}/>
-                <Route path="planets/:id" element={<Planets/>}/>
+                <Route path="planet/:id" element={<Planets/>}/>
                 <Route path="species" element={<Species/>}/>
                 <Route path="species/:id" element={<Species/>}/>
                 <Route path="starships" element={<Starships/>}/>
-                <Route path="starships/:id" element={<Starships/>}/>
+                <Route path="starship/:id" element={<Starships/>}/>
                 <Route path="vehicles" element={<Vehicles/>}/>
-                <Route path="vehicles/:id" element={<Vehicles/>}/>
+                <Route path="vehicle/:id" element={<Vehicles/>}/>
                 <Route path="*" element={<Home/>}/>
             </Routes>
         </Container>

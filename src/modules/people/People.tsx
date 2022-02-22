@@ -3,37 +3,28 @@ import {useQuery} from "@apollo/client";
 import GET_PEOPLE from "../../graphql/services/people/queries";
 import Loading from "../../components/Loading";
 import Card from "../../components/Card";
-import styled from "styled-components";
 import {Avatar} from "../../components/Avatar";
+import List from "../../components/List";
 
 const People: React.FC = () => {
     const {data, loading} = useQuery(GET_PEOPLE);
     if (loading) return <Loading/>
+    const {totalCount, people} = data.allPeople;
     return (
         <div>
-            <h1>People</h1>
-            <Container>
-                {data.allPeople.people.map((person: any) => (
-                    <Card>
-                        <Wrapper>
+            <h1>People <span>({totalCount})</span></h1>
+            <List.ListContainer>
+                {people.map((person: any) => (
+                    <Card.LinkCard to="people/1">
+                        <List.ListWrapperAvatar>
                             <Avatar name={person.name}/>
                             <div className="title">{person.name}</div>
-                        </Wrapper>
-                    </Card>
+                        </List.ListWrapperAvatar>
+                    </Card.LinkCard>
                 ))}
-            </Container>
+            </List.ListContainer>
         </div>
     )
 }
 
-const Container = styled('div')`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2em;
-`
-const Wrapper = styled('div')`
-  display: flex;
-  align-items: center;
-  gap: 2em;
-`
 export default People;
