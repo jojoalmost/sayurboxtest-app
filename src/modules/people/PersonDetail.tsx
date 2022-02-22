@@ -7,6 +7,9 @@ import DetailPage from "../../components/DetailPage";
 import Card from "../../components/Card";
 import Table from "../../components/Table";
 import {GetPeopleDetail} from "../../graphql/services/people/__generated__/GetPeopleDetail";
+import StarshipsRelated from "../starships/components/StarshipsRelated";
+import VehiclesRelated from "../vehicles/components/VehiclesRelated";
+import FilmRelated from "../films/components/FilmRelated";
 
 const PeopleDetail: React.FC = () => {
     const params = useParams();
@@ -60,6 +63,10 @@ const PeopleDetail: React.FC = () => {
                         </tbody>
                     </Table.TableDetail>
                 </Card.BoxCard>
+
+                <StarshipsRelated title="Starships" data={data?.person?.starshipConnection?.starships} />
+                <VehiclesRelated title="Vehicles" data={data?.person?.vehicleConnection?.vehicles}/>
+                <FilmRelated title="Films" data={data?.person?.filmConnection?.films}/>
             </DetailPage>
         </div>
     )

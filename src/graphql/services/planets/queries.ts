@@ -23,5 +23,19 @@ export const GET_PLANET_DETAIL =gql`
             population
             climates
             surfaceWater
+            residentConnection {
+                totalCount
+                residents {
+                    id
+                    name
+                }
+            }
+            filmConnection {
+                totalCount
+                films {
+                    id
+                    title
+                }
+            }
         }
     }`

@@ -7,6 +7,8 @@ import Card from "../../components/Card";
 import Table from "../../components/Table";
 import {GET_PLANET_DETAIL} from "../../graphql/services/planets/queries";
 import {GetPlanetDetail} from "../../graphql/services/planets/__generated__/GetPlanetDetail";
+import PersonRelated from "../people/components/PersonRelated";
+import FilmRelated from "../films/components/FilmRelated";
 
 const PlanetDetail: React.FC = () => {
     const params = useParams();
@@ -53,6 +55,9 @@ const PlanetDetail: React.FC = () => {
                         </tbody>
                     </Table.TableDetail>
                 </Card.BoxCard>
+
+                <PersonRelated title="Residents" data={data?.planet?.residentConnection?.residents}/>
+                <FilmRelated title="Films" data={data?.planet?.filmConnection?.films}/>
             </DetailPage>
         </div>
     )

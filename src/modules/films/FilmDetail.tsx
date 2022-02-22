@@ -7,6 +7,11 @@ import Card from "../../components/Card";
 import Table from "../../components/Table";
 import {GET_FILMS_DETAIL} from "../../graphql/services/films/queries";
 import {GetFilmsDetail} from "../../graphql/services/films/__generated__/GetFilmsDetail";
+import StarshipsRelated from "../starships/components/StarshipsRelated";
+import SpeciesRelated from "../species/components/SpeciesRelated";
+import VehiclesRelated from "../vehicles/components/VehiclesRelated";
+import PersonRelated from "../people/components/PersonRelated";
+import PlanetsRelated from "../planets/components/PlanetsRelated";
 
 const MoviesDetail: React.FC = () => {
     const params = useParams();
@@ -23,7 +28,7 @@ const MoviesDetail: React.FC = () => {
                             <td className="description">{data?.film?.title}</td>
                         </tr>
                         <tr>
-                            <td className="title">episodeID</td>
+                            <td className="title">episode ID</td>
                             <td className="description">{data?.film?.episodeID}</td>
                         </tr>
                         <tr>
@@ -45,6 +50,12 @@ const MoviesDetail: React.FC = () => {
                         </tbody>
                     </Table.TableDetail>
                 </Card.BoxCard>
+
+                <SpeciesRelated title="Species" data={data?.film?.speciesConnection?.species}/>
+                <StarshipsRelated title="Starships" data={data?.film?.starshipConnection?.starships} />
+                <VehiclesRelated title="Vehicles" data={data?.film?.vehicleConnection?.vehicles} />
+                <PersonRelated title="Character" data={data?.film?.characterConnection?.characters} />
+                <PlanetsRelated title="Planets" data={data?.film?.planetConnection?.planets} />
             </DetailPage>
         </div>
     )

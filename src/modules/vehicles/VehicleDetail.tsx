@@ -7,7 +7,8 @@ import Loading from "../../components/Loading";
 import DetailPage from "../../components/DetailPage";
 import Card from "../../components/Card";
 import Table from "../../components/Table";
-import Person from "../people/components/Person";
+import PersonRelated from "../people/components/PersonRelated";
+import FilmRelated from "../films/components/FilmRelated";
 
 const VehicleDetail: React.FC = () => {
     const params = useParams();
@@ -66,7 +67,8 @@ const VehicleDetail: React.FC = () => {
                         </tbody>
                     </Table.TableDetail>
 
-                    <Person title="Pilot" data={data?.vehicle?.pilotConnection?.pilots} />
+                    <PersonRelated title="Pilot" data={data?.vehicle?.pilotConnection?.pilots} />
+                    <FilmRelated title="Films" data={data?.vehicle?.filmConnection?.films}/>
                 </Card.BoxCard>
             </DetailPage>
         </div>

@@ -7,6 +7,8 @@ import Card from "../../components/Card";
 import Table from "../../components/Table";
 import {GetSpeciesDetail} from "../../graphql/services/species/__generated__/GetSpeciesDetail";
 import {GET_SPECIES_DETAIL} from "../../graphql/services/species/queries";
+import PersonRelated from "../people/components/PersonRelated";
+import FilmRelated from "../films/components/FilmRelated";
 
 const SpeciesDetail: React.FC = () => {
     const params = useParams();
@@ -57,6 +59,9 @@ const SpeciesDetail: React.FC = () => {
                         </tbody>
                     </Table.TableDetail>
                 </Card.BoxCard>
+
+                <PersonRelated title="Person" data={data?.species?.personConnection?.people} />
+                <FilmRelated title="Films" data={data?.species?.filmConnection?.films}/>
             </DetailPage>
         </div>
     )

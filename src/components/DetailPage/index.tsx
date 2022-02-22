@@ -9,7 +9,7 @@ interface DetailPageProps {
 
 const DetailPage: React.FC<DetailPageProps> = ({title, backUrl, children}) => {
     return (
-        <div>
+        <MainWrapper>
             <Wrapper>
                 <h1>{title}</h1>
                 <div>
@@ -17,9 +17,13 @@ const DetailPage: React.FC<DetailPageProps> = ({title, backUrl, children}) => {
                 </div>
             </Wrapper>
             <div>{children}</div>
-        </div>
+        </MainWrapper>
     )
 }
+
+const MainWrapper = styled('div')`
+  margin-bottom: 3em
+`
 
 const Wrapper = styled('div')`
   display: flex;

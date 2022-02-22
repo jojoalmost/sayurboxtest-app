@@ -24,5 +24,19 @@ export const GET_SPECIES_DETAIL = gql`
             hairColors
             skinColors
             language
+            personConnection {
+                totalCount
+                people {
+                    id
+                    name
+                }
+            }
+            filmConnection {
+                totalCount
+                films {
+                    id
+                    title
+                }
+            }
         }
     }`
