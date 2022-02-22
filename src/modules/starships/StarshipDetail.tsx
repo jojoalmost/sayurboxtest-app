@@ -14,7 +14,7 @@ const StarshipDetail: React.FC = () => {
     if (loading) return <Loading/>;
     return (
         <div>
-            <DetailPage title={data?.starship?.name}>
+            <DetailPage title={data?.starship?.name} backUrl="/starships">
                 <Card.BoxCard>
                     <Table.TableDetail>
                         <tbody>

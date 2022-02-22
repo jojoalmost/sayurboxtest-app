@@ -14,7 +14,7 @@ const PeopleDetail: React.FC = () => {
     if (loading) return <Loading/>;
     return (
         <div>
-            <DetailPage title={data?.person?.name}>
+            <DetailPage title={data?.person?.name} backUrl="/people">
                 <Card.BoxCard>
                     <Table.TableDetail>
                         <tbody>

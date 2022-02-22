@@ -14,7 +14,7 @@ const SpeciesDetail: React.FC = () => {
     if (loading) return <Loading/>;
     return (
         <div>
-            <DetailPage title={data?.species?.name}>
+            <DetailPage title={data?.species?.name} backUrl="/species">
                 <Card.BoxCard>
                     <Table.TableDetail>
                         <tbody>

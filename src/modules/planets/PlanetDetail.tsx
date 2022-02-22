@@ -14,7 +14,7 @@ const PlanetDetail: React.FC = () => {
     if (loading) return <Loading/>;
     return (
         <div>
-            <DetailPage title={data?.planet?.name}>
+            <DetailPage title={data?.planet?.name} backUrl="/planets">
                 <Card.BoxCard>
                     <Table.TableDetail>
                         <tbody>
