@@ -1,15 +1,15 @@
 import React from "react";
 import Card from "../../../components/Card";
-import {GetPeopleDetail_person} from "../../../graphql/services/people/__generated__/GetPeopleDetail";
 import List from "../../../components/List";
 import {Avatar} from "../../../components/Avatar";
+import {GetSpeciesDetail_species} from "../../../graphql/services/species/__generated__/GetSpeciesDetail";
 
 interface PersonProps {
     title: string;
-    data?: (Pick<GetPeopleDetail_person, 'id' | 'name'> | null)[] | null
+    data?: (Pick<GetSpeciesDetail_species, 'id' | 'name'> | null)[] | null
 }
 
-const Person: React.FC<PersonProps> = ({title, data}) => {
+const SpeciesRelated: React.FC<PersonProps> = ({title, data}) => {
     if (data?.length === 0) return null;
     return (
         <div>
@@ -27,4 +27,4 @@ const Person: React.FC<PersonProps> = ({title, data}) => {
         </div>
     )
 }
-export default Person;
+export default SpeciesRelated;

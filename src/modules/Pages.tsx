@@ -2,9 +2,10 @@ import React from "react";
 import {Container, Header} from "../components/Layout";
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 
-const Home = React.lazy(() => import('./home'));
+const Films = React.lazy(() => import('./films/Films'));
+const FilmDetail = React.lazy(() => import('./films/FilmDetail'));
 const People = React.lazy(() => import('./people/People'));
-const PeopleDetail = React.lazy(() => import('./people/PeopleDetail'));
+const PeopleDetail = React.lazy(() => import('./people/PersonDetail'));
 const Planets = React.lazy(() => import('./planets/Planets'));
 const PlanetDetail = React.lazy(() => import('./planets/PlanetDetail'));
 const Species = React.lazy(() => import('./species/Species'));
@@ -21,8 +22,10 @@ const Pages: React.FC = () => (
             <Routes>
                 <Route
                     path="/"
-                    element={<Navigate to="/people" />}
+                    element={<Navigate to="/films"/>}
                 />
+                <Route path="films" element={<Films/>}/>
+                <Route path="films/:id" element={<FilmDetail/>}/>
                 <Route path="people" element={<People/>}/>
                 <Route path="people/:id" element={<PeopleDetail/>}/>
                 <Route path="planets" element={<Planets/>}/>
@@ -35,7 +38,7 @@ const Pages: React.FC = () => (
                 <Route path="vehicles/:id" element={<VehicleDetail/>}/>
                 <Route
                     path="*"
-                    element={<Navigate to="/people" />}
+                    element={<Navigate to="/films"/>}
                 />
             </Routes>
         </Container>
