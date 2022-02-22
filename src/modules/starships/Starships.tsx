@@ -15,7 +15,7 @@ const Starships: React.FC = () => {
             <h1>Starships <span>({totalCount})</span></h1>
             <List.ListContainer>
                 {starships.map((starship: any) => (
-                    <Card.LinkCard to="starship/1">
+                    <Card.LinkCard to="/starships/1">
                         <List.ListWrapperAvatar>
                             <Avatar name={starship.name}/>
                             <div className="title">{starship.name}</div>

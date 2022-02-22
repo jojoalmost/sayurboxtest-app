@@ -2,16 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 interface AvatarProps {
-    name: string;
+    name?: string | null;
 }
 
 const Avatar: React.FC<AvatarProps> = ({name}) => {
     let initials = '';
-    const fullName = name.split(' ');
-    if (fullName.length > 0) {
-        let firstName = fullName.shift()?.charAt(0) || '';
-        let lastName = fullName.pop()?.charAt(0) || '';
-        initials = firstName + lastName;
+    if (name){
+        const fullName = name.split(' ');
+        if (fullName.length > 0) {
+            let firstName = fullName.shift()?.charAt(0) || '';
+            let lastName = fullName.pop()?.charAt(0) || '';
+            initials = firstName + lastName;
+        }
     }
     return (
         <Container>{initials.toUpperCase()}</Container>

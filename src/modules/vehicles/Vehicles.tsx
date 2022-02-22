@@ -15,7 +15,7 @@ const Vehicles: React.FC = () => {
             <h1>Vehicles <span>({totalCount})</span></h1>
             <List.ListContainer>
                 {vehicles.map((vehicle: any) => (
-                    <Card.LinkCard to="vehicle/1">
+                    <Card.LinkCard to="/vehicles/1">
                         <List.ListWrapperAvatar>
                             <Avatar name={vehicle.name}/>
                             <div className="title">{vehicle.name}</div>

@@ -15,7 +15,7 @@ const Species: React.FC = () => {
         <h1>Species <span>({totalCount})</span></h1>
             <List.ListContainer>
                 {species.map((species: any) => (
-                    <Card.LinkCard to="species/1">
+                    <Card.LinkCard to="/species/1">
                         <List.ListWrapperAvatar>
                             <Avatar name={species.name}/>
                             <div className="title">{species.name}</div>
