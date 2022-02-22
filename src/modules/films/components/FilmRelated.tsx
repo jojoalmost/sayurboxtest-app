@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "../../../components/Card";
-import {GetPeopleDetail_person} from "../../../graphql/services/people/__generated__/GetPeopleDetail";
 import List from "../../../components/List";
 import {Avatar} from "../../../components/Avatar";
 import {GetFilms_allFilms_films} from "../../../graphql/services/films/__generated__/GetFilms";

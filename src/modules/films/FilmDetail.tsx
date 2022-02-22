@@ -1,7 +1,7 @@
 import React from "react";
 import {useQuery} from "@apollo/client";
 import Loading from "../../components/Loading";
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import DetailPage from "../../components/DetailPage";
 import Card from "../../components/Card";
 import Table from "../../components/Table";
@@ -52,10 +52,10 @@ const MoviesDetail: React.FC = () => {
                 </Card.BoxCard>
 
                 <SpeciesRelated title="Species" data={data?.film?.speciesConnection?.species}/>
-                <StarshipsRelated title="Starships" data={data?.film?.starshipConnection?.starships} />
-                <VehiclesRelated title="Vehicles" data={data?.film?.vehicleConnection?.vehicles} />
-                <PersonRelated title="Character" data={data?.film?.characterConnection?.characters} />
-                <PlanetsRelated title="Planets" data={data?.film?.planetConnection?.planets} />
+                <StarshipsRelated title="Starships" data={data?.film?.starshipConnection?.starships}/>
+                <VehiclesRelated title="Vehicles" data={data?.film?.vehicleConnection?.vehicles}/>
+                <PersonRelated title="Character" data={data?.film?.characterConnection?.characters}/>
+                <PlanetsRelated title="Planets" data={data?.film?.planetConnection?.planets}/>
             </DetailPage>
         </div>
     )
