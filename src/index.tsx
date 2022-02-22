@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserTracing} from "@sentry/tracing";
+import * as Sentry from "@sentry/react";
 
 Sentry.init({
     dsn: "https://dc722430570d440381308e5a64a90ffe@o1149190.ingest.sentry.io/6223244",
