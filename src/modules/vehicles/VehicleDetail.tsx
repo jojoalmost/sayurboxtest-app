@@ -66,10 +66,10 @@ const VehicleDetail: React.FC = () => {
                         </tr>
                         </tbody>
                     </Table.TableDetail>
-
-                    <PersonRelated title="Pilot" data={data?.vehicle?.pilotConnection?.pilots} />
-                    <FilmRelated title="Films" data={data?.vehicle?.filmConnection?.films}/>
                 </Card.BoxCard>
+
+                <PersonRelated title="Pilot" data={data?.vehicle?.pilotConnection?.pilots} />
+                <FilmRelated title="Films" data={data?.vehicle?.filmConnection?.films}/>
             </DetailPage>
         </div>
     )
