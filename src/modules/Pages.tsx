@@ -1,6 +1,6 @@
 import React from "react";
 import {Container, Header} from "../components/Layout";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 
 const Home = React.lazy(() => import('./home'));
 const People = React.lazy(() => import('./people/People'));
@@ -19,7 +19,10 @@ const Pages: React.FC = () => (
         <Header/>
         <Container>
             <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route
+                    path="/"
+                    element={<Navigate to="/people" />}
+                />
                 <Route path="people" element={<People/>}/>
                 <Route path="people/:id" element={<PeopleDetail/>}/>
                 <Route path="planets" element={<Planets/>}/>
@@ -30,7 +33,10 @@ const Pages: React.FC = () => (
                 <Route path="starships/:id" element={<StarshipDetail/>}/>
                 <Route path="vehicles" element={<Vehicles/>}/>
                 <Route path="vehicles/:id" element={<VehicleDetail/>}/>
-                <Route path="*" element={<Home/>}/>
+                <Route
+                    path="*"
+                    element={<Navigate to="/people" />}
+                />
             </Routes>
         </Container>
     </BrowserRouter>

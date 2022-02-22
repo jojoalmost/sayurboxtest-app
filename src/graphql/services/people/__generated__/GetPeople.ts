@@ -10,14 +10,13 @@
 export interface GetPeople_allPeople_people {
   __typename: "Person";
   /**
+   * The ID of an object
+   */
+  id: string;
+  /**
    * The name of this person.
    */
   name: string | null;
-  /**
-   * The gender of this person. Either "Male", "Female" or "unknown",
-   * "n/a" if the person does not have a gender.
-   */
-  gender: string | null;
 }
 
 export interface GetPeople_allPeople {

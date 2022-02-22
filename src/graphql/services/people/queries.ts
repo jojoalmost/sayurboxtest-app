@@ -5,13 +5,13 @@ export const GET_PEOPLE = gql`
         allPeople {
             totalCount
             people {
+                id
                 name
-                gender
             }
         }
     }`
 
-export const GET_DETAIL_PEOPLE = gql`
+export const GET_PEOPLE_DETAIL = gql`
     query GetPeopleDetail($id: ID!){
         person(id: $id) {
             id
@@ -23,31 +23,34 @@ export const GET_DETAIL_PEOPLE = gql`
             height
             mass
             skinColor
-            created
-            edited
             homeworld {
                 id
                 name
-                diameter
-                rotationPeriod
-                orbitalPeriod
-                rotationPeriod
-                gravity
-                population
-                climates
-                surfaceWater
             }
             species {
                 id
                 name
-                classification
-                designation
-                averageHeight
-                averageLifespan
-                eyeColors
-                hairColors
-                skinColors
-                language
+            }
+            starshipConnection {
+                totalCount
+                starships {
+                    id
+                    name
+                }
+            }
+            vehicleConnection {
+                totalCount
+                vehicles {
+                    id
+                    name
+                }
+            }
+            filmConnection {
+                totalCount
+                films {
+                    id
+                    title
+                }
             }
         }
     }`

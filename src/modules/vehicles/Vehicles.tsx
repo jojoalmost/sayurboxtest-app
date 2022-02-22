@@ -1,24 +1,24 @@
 import React from "react";
 import {useQuery} from "@apollo/client";
 import Loading from "../../components/Loading";
-import GET_VEHICLES from "../../graphql/services/vehicles/queries";
 import Card from "../../components/Card";
 import List from "../../components/List";
 import {Avatar} from "../../components/Avatar";
+import {GetVehicles} from "../../graphql/services/vehicles/__generated__/GetVehicles";
+import {GET_VEHICLES} from "../../graphql/services/vehicles/queries";
 
 const Vehicles: React.FC = () => {
-    const {data, loading} = useQuery(GET_VEHICLES);
+    const {data, loading} = useQuery<GetVehicles>(GET_VEHICLES);
     if (loading) return <Loading/>
-    const {totalCount, vehicles} = data.allVehicles;
     return (
         <div>
-            <h1>Vehicles <span>({totalCount})</span></h1>
+            <h1>Vehicles <span>({data?.allVehicles?.totalCount})</span></h1>
             <List.ListContainer>
-                {vehicles.map((vehicle: any) => (
-                    <Card.LinkCard to="/vehicles/1">
+                {data?.allVehicles?.vehicles?.map(item => (
+                    <Card.LinkCard key={item?.id} to={`/vehicles/${item?.id}`}>
                         <List.ListWrapperAvatar>
-                            <Avatar name={vehicle.name}/>
-                            <div className="title">{vehicle.name}</div>
+                            <Avatar name={item?.name}/>
+                            <div className="title">{item?.name}</div>
                         </List.ListWrapperAvatar>
                     </Card.LinkCard>
                 ))}

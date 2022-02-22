@@ -10,13 +10,13 @@
 export interface GetStarships_allStarships_starships {
   __typename: "Starship";
   /**
+   * The ID of an object
+   */
+  id: string;
+  /**
    * The name of this starship. The common name, such as "Death Star".
    */
   name: string | null;
-  /**
-   * The cost of this starship new, in galactic credits.
-   */
-  costInCredits: number | null;
 }
 
 export interface GetStarships_allStarships {

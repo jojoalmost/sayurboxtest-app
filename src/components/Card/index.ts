@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 
-const Card = styled('div')`
+const BoxCard = styled('div')`
   background-color: white;
   cursor: pointer;
   border-radius: 0.25em;
@@ -32,5 +32,5 @@ const LinkCard = styled(Link)`
 `
 
 export default {
-    Card, LinkCard
+    BoxCard, LinkCard
 };

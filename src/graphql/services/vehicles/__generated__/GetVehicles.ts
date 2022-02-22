@@ -10,6 +10,10 @@
 export interface GetVehicles_allVehicles_vehicles {
   __typename: "Vehicle";
   /**
+   * The ID of an object
+   */
+  id: string;
+  /**
    * The name of this vehicle. The common name, such as "Sand Crawler" or "Speeder
    * bike".
    */

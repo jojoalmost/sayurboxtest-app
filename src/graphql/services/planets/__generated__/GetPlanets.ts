@@ -10,6 +10,10 @@
 export interface GetPlanets_allPlanets_planets {
   __typename: "Planet";
   /**
+   * The ID of an object
+   */
+  id: string;
+  /**
    * The name of this planet.
    */
   name: string | null;

@@ -10,14 +10,13 @@
 export interface GetSpecies_allSpecies_species {
   __typename: "Species";
   /**
+   * The ID of an object
+   */
+  id: string;
+  /**
    * The name of this species.
    */
   name: string | null;
-  /**
-   * Common skin colors for this species, null if this species does not typically
-   * have skin.
-   */
-  skinColors: (string | null)[] | null;
 }
 
 export interface GetSpecies_allSpecies {

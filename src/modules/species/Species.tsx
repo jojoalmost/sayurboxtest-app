@@ -1,24 +1,24 @@
 import React from "react";
 import {useQuery} from "@apollo/client";
 import Loading from "../../components/Loading";
-import GET_SPECIES from "../../graphql/services/species/queries";
 import Card from "../../components/Card";
 import List from "../../components/List";
 import {Avatar} from "../../components/Avatar";
+import {GetSpecies} from "../../graphql/services/species/__generated__/GetSpecies";
+import {GET_SPECIES} from "../../graphql/services/species/queries";
 
 const Species: React.FC = () => {
-    const {data, loading} = useQuery(GET_SPECIES);
-    if (loading) return <Loading/>
-    const {totalCount, species} = data.allSpecies;
+    const {data, loading} = useQuery<GetSpecies>(GET_SPECIES);
+    if (loading) return <Loading/>;
     return (
         <div>
-        <h1>Species <span>({totalCount})</span></h1>
+            <h1>Species <span>({data?.allSpecies?.totalCount})</span></h1>
             <List.ListContainer>
-                {species.map((species: any) => (
-                    <Card.LinkCard to="/species/1">
+                {data?.allSpecies?.species?.map(item => (
+                    <Card.LinkCard key={item?.id} to={`/species/${item?.id}`}>
                         <List.ListWrapperAvatar>
-                            <Avatar name={species.name}/>
-                            <div className="title">{species.name}</div>
+                            <Avatar name={item?.name}/>
+                            <div className="title">{item?.name}</div>
                         </List.ListWrapperAvatar>
                     </Card.LinkCard>
                 ))}
