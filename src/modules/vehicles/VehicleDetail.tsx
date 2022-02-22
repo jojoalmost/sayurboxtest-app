@@ -7,6 +7,7 @@ import Loading from "../../components/Loading";
 import DetailPage from "../../components/DetailPage";
 import Card from "../../components/Card";
 import Table from "../../components/Table";
+import Person from "../people/components/Person";
 
 const VehicleDetail: React.FC = () => {
     const params = useParams();
@@ -64,6 +65,8 @@ const VehicleDetail: React.FC = () => {
                         </tr>
                         </tbody>
                     </Table.TableDetail>
+
+                    <Person title="Pilot" data={data?.vehicle?.pilotConnection?.pilots} />
                 </Card.BoxCard>
             </DetailPage>
         </div>

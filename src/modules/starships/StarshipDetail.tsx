@@ -7,6 +7,7 @@ import Card from "../../components/Card";
 import Table from "../../components/Table";
 import {GET_STARSHIPS_DETAIL} from "../../graphql/services/starships/queries";
 import {GetStarshipsDetail} from "../../graphql/services/starships/__generated__/GetStarshipsDetail";
+import Person from "../people/components/Person";
 
 const StarshipDetail: React.FC = () => {
     const params = useParams();
@@ -72,7 +73,10 @@ const StarshipDetail: React.FC = () => {
                         </tr>
                         </tbody>
                     </Table.TableDetail>
+
                 </Card.BoxCard>
+
+                <Person title="Pilot" data={data?.starship?.pilotConnection?.pilots}/>
             </DetailPage>
         </div>
     )
