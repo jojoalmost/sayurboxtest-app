@@ -6,24 +6,36 @@ const Menu: React.FC<LinkProps> = ({children, to, ...props}) => {
     const resolved = useResolvedPath(to);
     const match = Boolean(useMatch({path: `${resolved.pathname}/*`, end: true}));
     return (
-        <LinkMenu
-            active={match}
-            to={to}
-            {...props}
-        >
-            {children}
-        </LinkMenu>
+        <>
+            {
+                match ? (
+                    <LinkActive
+                        to={to}
+                        {...props}
+                    >
+                        {children}
+                    </LinkActive>
+                ) : (
+                    <LinkMenu to={to}
+                              {...props}>
+                        {children}
+                    </LinkMenu>
+                )
+            }
+        </>
     );
 }
 
-interface LinkMenu {
-    active: boolean
-}
-
-const LinkMenu = styled(Link)<LinkMenu>`
+const LinkActive = styled(Link)`
   text-decoration: none;
-  font-weight: ${props => props.active ? 700 : 500};
-  color: ${props => props.active ? '#47b04b' : '#000000'};
+  font-weight: 700;
+  color: #47b04b;
+`
+
+const LinkMenu = styled(Link)`
+  text-decoration: none;
+  font-weight: 500;
+  color: #000000;
 `
 
 export default Menu;
